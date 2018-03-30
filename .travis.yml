@@ -1,7 +1,7 @@
 language: java
 before_install:
 - sudo rm /usr/local/bin/docker-compose
-- curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose- `uname
+- curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname
   -s`-`uname -m` > docker-compose
 - chmod +x docker-compose
 - sudo mv docker-compose /usr/local/bin
@@ -12,9 +12,8 @@ install:
 - docker build --build-arg JAR_FILE=/target/backend.jar -t $DOCKER_USERNAME/se234-lab10-backend .
 - docker push 444768367/se234-lab10-backend
 - docker pull 444768367/se234-lab10-client
-
 script:
-- docker-compose -H "$DOCKER_HOST" up -d
+- docker-compose -H "$HOST_NAME" up -d
 cache:
   directories:
   - "$HOME/.m2"

@@ -4,7 +4,7 @@ services:
     image: 444768367/se234-lab10-backend:latest
     ports:
       - "8082:8088"
-  fronted:
+  frontend:
     image: 444768367/se234-lab10-client:latest
     ports:
       - "8081:80"

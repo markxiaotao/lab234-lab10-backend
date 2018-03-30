@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+  backend:
+    image: 444768367/se234-lab10-backend:lastest
+    ports:
+      - "8082:8088"
+    fronted:
+      image: 444768367/se234-lab10-backend:lastest
+      ports:
+        - "8081:80"
